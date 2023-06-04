@@ -1,21 +1,26 @@
 import { Profile } from "./Profile/Profile";
+import { Statistics } from './Statistics/Statistics';
 
-import PropTypes from 'prop-types';
+import User from './data/user.json';
+import Data from './data/data.json';
 
-export const App = (user) => {
+export const App = () => {
+  const { username, tag, location, avatar, stats } = User;
   return (
-    <Profile
-      //username={user.username}
-      //tag={user.tag}
-      // location={user.location}
-      // avatar={user.avatar}
-      // followers={user.stats.followers}
-      // views={user.stats.views}
-      // likes={user.stats.likes}
-    />
+    <>
+      <Profile
+        username={username}
+        tag={tag}
+        location={location}
+        avatar={avatar}
+        followers={stats.followers}
+        views={stats.views}
+        likes={stats.likes}
+      />
+      <Statistics
+        title="Upload stats"
+        files={Data}
+      />
+    </>
   );
-};
-
-App.propTypes = {
-  user: PropTypes.object.isRequired
 };
