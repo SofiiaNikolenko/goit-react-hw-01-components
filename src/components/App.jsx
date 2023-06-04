@@ -3,6 +3,7 @@ import { Statistics } from './Statistics/Statistics';
 
 import User from './data/user.json';
 import Data from './data/data.json';
+import Friends from './data/friends.json';
 
 export const App = () => {
   const { username, tag, location, avatar, stats } = User;
