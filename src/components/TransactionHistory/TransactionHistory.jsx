@@ -27,5 +27,13 @@ export const TransactionHistory = ({items}) => {
     )
 }
 
-// записати проп тайпи
-// зробити стилі для всіх завдань
+TransactionHistory.propTypes = {
+    items: PropTypes.arrayOf(
+        PropTypes.exact({
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            amount: PropTypes.string.isRequired,
+            currency: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
+}
